@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontEnd", "FrontEnd\FrontEnd.csproj", "{882FBDA2-ED74-4927-9066-6252696F241A}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TaskyAppSetup", "Installer\Installer.vdproj", "{A7A9E354-A92C-48A6-9440-DF26F2E6C35F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{882FBDA2-ED74-4927-9066-6252696F241A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{882FBDA2-ED74-4927-9066-6252696F241A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{882FBDA2-ED74-4927-9066-6252696F241A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{882FBDA2-ED74-4927-9066-6252696F241A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7A9E354-A92C-48A6-9440-DF26F2E6C35F}.Debug|Any CPU.ActiveCfg = Debug
+		{A7A9E354-A92C-48A6-9440-DF26F2E6C35F}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2223AA1-2518-4993-91E2-35F3D5A997C2}
+	EndGlobalSection
+EndGlobal
