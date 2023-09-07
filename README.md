@@ -25,3 +25,11 @@ An application that enable get charts about your routines.
 * Add profile photo.
 * See all Parts of the app.
 * Make installer App.
+
+## DataBase
+
+![DataBaseDiagram](Guide/Pictures/DBDiagram.png "DataBaseDiagram")
+
+## Dependencies Related
+
+![Dependencies](Guide/Pictures/DependenciesDiagram.png "Dependencies")
