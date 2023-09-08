@@ -1,0 +1,12 @@
+C:\Users\Public\Practices\TaskyApp\Build\TaskyApp\FrontEnd.exe.config
+C:\Users\Public\Practices\TaskyApp\Build\TaskyApp\FrontEnd.exe
+C:\Users\Public\Practices\TaskyApp\Build\TaskyApp\FrontEnd.pdb
+C:\Users\Public\Practices\TaskyApp\FrontEnd\obj\Debug\FrontEnd.csproj.AssemblyReference.cache
+C:\Users\Public\Practices\TaskyApp\FrontEnd\obj\Debug\FrontEnd.Properties.Resources.resources
+C:\Users\Public\Practices\TaskyApp\FrontEnd\obj\Debug\FrontEnd.csproj.GenerateResource.cache
+C:\Users\Public\Practices\TaskyApp\FrontEnd\obj\Debug\FrontEnd.csproj.CoreCompileInputs.cache
+C:\Users\Public\Practices\TaskyApp\FrontEnd\obj\Debug\FrontEnd.exe
+C:\Users\Public\Practices\TaskyApp\FrontEnd\obj\Debug\FrontEnd.pdb
+C:\Users\Public\Practices\TaskyApp\FrontEnd\obj\Debug\FrontEnd.MainForm.resources
+C:\Users\Public\Practices\TaskyApp\FrontEnd\obj\Debug\FrontEnd.csproj.CopyComplete
+C:\Users\Public\Practices\TaskyApp\Build\TaskyApp\DataBase\TaskyDB.db

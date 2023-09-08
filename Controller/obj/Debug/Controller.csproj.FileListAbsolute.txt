@@ -1,0 +1,8 @@
+C:\Users\Public\Practices\TaskyApp\Build\TaskyApp\Controller.dll
+C:\Users\Public\Practices\TaskyApp\Build\TaskyApp\Controller.pdb
+C:\Users\Public\Practices\TaskyApp\Controller\obj\Debug\Controller.csproj.AssemblyReference.cache
+C:\Users\Public\Practices\TaskyApp\Controller\obj\Debug\Controller.csproj.CoreCompileInputs.cache
+C:\Users\Public\Practices\TaskyApp\Controller\obj\Debug\Controller.csproj.CopyComplete
+C:\Users\Public\Practices\TaskyApp\Controller\obj\Debug\Controller.dll
+C:\Users\Public\Practices\TaskyApp\Controller\obj\Debug\Controller.pdb
+C:\Users\Public\Practices\TaskyApp\Build\TaskyApp\DataBase\TaskyDB.db

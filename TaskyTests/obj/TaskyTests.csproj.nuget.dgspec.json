@@ -1,0 +1,176 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Public\\Practices\\TaskyApp\\TaskyTests\\TaskyTests.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Public\\Practices\\TaskyApp\\Controller\\Controller.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Public\\Practices\\TaskyApp\\Controller\\Controller.csproj",
+        "projectName": "Controller",
+        "projectPath": "C:\\Users\\Public\\Practices\\TaskyApp\\Controller\\Controller.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {
+              "C:\\Users\\Public\\Practices\\TaskyApp\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\Public\\Practices\\TaskyApp\\DAL\\DAL.csproj"
+              },
+              "C:\\Users\\Public\\Practices\\TaskyApp\\Models\\Models.csproj": {
+                "projectPath": "C:\\Users\\Public\\Practices\\TaskyApp\\Models\\Models.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "C:\\Users\\Public\\Practices\\TaskyApp\\DAL\\DAL.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Public\\Practices\\TaskyApp\\DAL\\DAL.csproj",
+        "projectName": "DAL",
+        "projectPath": "C:\\Users\\Public\\Practices\\TaskyApp\\DAL\\DAL.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {
+              "C:\\Users\\Public\\Practices\\TaskyApp\\Models\\Models.csproj": {
+                "projectPath": "C:\\Users\\Public\\Practices\\TaskyApp\\Models\\Models.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "C:\\Users\\Public\\Practices\\TaskyApp\\FrontEnd\\FrontEnd.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Public\\Practices\\TaskyApp\\FrontEnd\\FrontEnd.csproj",
+        "projectName": "FrontEnd",
+        "projectPath": "C:\\Users\\Public\\Practices\\TaskyApp\\FrontEnd\\FrontEnd.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {
+              "C:\\Users\\Public\\Practices\\TaskyApp\\Controller\\Controller.csproj": {
+                "projectPath": "C:\\Users\\Public\\Practices\\TaskyApp\\Controller\\Controller.csproj"
+              },
+              "C:\\Users\\Public\\Practices\\TaskyApp\\Models\\Models.csproj": {
+                "projectPath": "C:\\Users\\Public\\Practices\\TaskyApp\\Models\\Models.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "C:\\Users\\Public\\Practices\\TaskyApp\\Models\\Models.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Public\\Practices\\TaskyApp\\Models\\Models.csproj",
+        "projectName": "Models",
+        "projectPath": "C:\\Users\\Public\\Practices\\TaskyApp\\Models\\Models.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "C:\\Users\\Public\\Practices\\TaskyApp\\TaskyTests\\TaskyTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Public\\Practices\\TaskyApp\\TaskyTests\\TaskyTests.csproj",
+        "projectName": "TaskyTests",
+        "projectPath": "C:\\Users\\Public\\Practices\\TaskyApp\\TaskyTests\\TaskyTests.csproj",
+        "packagesPath": "C:\\Users\\Danpier\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Public\\Practices\\TaskyApp\\TaskyTests\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Danpier\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Public\\Practices\\TaskyApp\\FrontEnd\\FrontEnd.csproj": {
+                "projectPath": "C:\\Users\\Public\\Practices\\TaskyApp\\FrontEnd\\FrontEnd.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.12.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.5.0, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
