@@ -22,5 +22,11 @@ namespace Controller
             frmAddTaskDAL frmAddTaskDAL = new frmAddTaskDAL(_connString);
             frmAddTaskDAL.SaveArea(nameArea);
         }
+
+        public void SaveTask(string description, string nameArea)
+        {
+            frmAddTaskDAL frmAddTaskDAL = new frmAddTaskDAL(_connString);
+            frmAddTaskDAL.SaveTask(description, nameArea);
+        }
     }
 }

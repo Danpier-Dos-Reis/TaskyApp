@@ -5,8 +5,6 @@ VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontEnd", "FrontEnd\FrontEnd.csproj", "{882FBDA2-ED74-4927-9066-6252696F241A}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TaskyAppSetup", "Installer\Installer.vdproj", "{A7A9E354-A92C-48A6-9440-DF26F2E6C35F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{A332C7D9-1D64-4F97-A707-473A439E7895}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller", "Controller\Controller.csproj", "{129E6BF9-8067-43D5-9060-3199BF43DC5A}"
@@ -25,8 +23,6 @@ Global
 		{882FBDA2-ED74-4927-9066-6252696F241A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{882FBDA2-ED74-4927-9066-6252696F241A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{882FBDA2-ED74-4927-9066-6252696F241A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A7A9E354-A92C-48A6-9440-DF26F2E6C35F}.Debug|Any CPU.ActiveCfg = Debug
-		{A7A9E354-A92C-48A6-9440-DF26F2E6C35F}.Release|Any CPU.ActiveCfg = Release
 		{A332C7D9-1D64-4F97-A707-473A439E7895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A332C7D9-1D64-4F97-A707-473A439E7895}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A332C7D9-1D64-4F97-A707-473A439E7895}.Release|Any CPU.ActiveCfg = Release|Any CPU

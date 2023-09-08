@@ -40,7 +40,7 @@ namespace FrontEnd
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmAddTask frmAddTask = new frmAddTask();
-            frmAddTask.ShowDialog();
+            frmAddTask.ShowDialog(this);
         }
 
         #endregion
@@ -51,7 +51,7 @@ namespace FrontEnd
         /// Method that queries for current tasks and paste that in the Grid
         /// </summary>
         /// <param name="connString"></param>
-        private void StartGrid(string connString)
+        public void StartGrid(string connString)
         {
             MainFormController mainFormController = new MainFormController();
             gMain.DataSource = mainFormController.GetCurrentTasks(_connString);
