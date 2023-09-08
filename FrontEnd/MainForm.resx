@@ -273,12 +273,12 @@
   <data name="&gt;&gt;btnExit.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="colDelete.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="colDelete.HeaderText" xml:space="preserve">
-    <value>Delete</value>
+  <data name="descriptionDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Description</value>
   </data>
+  <metadata name="currentViewBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>454, 17</value>
+  </metadata>
   <data name="gMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>258, 169</value>
   </data>
@@ -332,6 +332,10 @@
   </data>
   <data name="lblDateNow.Font" type="System.Drawing.Font, System.Drawing">
     <value>Lucida Handwriting, 11.25pt</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblDateNow.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblDateNow.Location" type="System.Drawing.Point, System.Drawing">
     <value>254, 46</value>
@@ -468,7 +472,7 @@
         c8WxhAeEOxKWLfmB2SInFG8ottI58+ee6oWhZXtmWuky24kyziRTaBjkWCVNll5ZbVFcYrIfqeBv8/1T
         4jLEtYopjlHWsNB9P+oPfnfrJvv7ikmhCNQ+e957JwS3oZD3vK8jzyscQ/UTXNol/9ohDH2Ini9pHQfQ
         vAnnVyXN2IGLLWh9zOiO7kvVMgPJJLydyjfNQcsNNC4Ue/vZ5+Qe4tLVxDXs7UNXSrIXK7y7vry3P8/4
-        /RH5BrdmcsJKc8ZMAAAACXBIWXMAAAPmAAAD5gER8h6VAAAAB3RJTUUH5wkGDx03o2MyGQAAfh1JREFU
+        /RH5BrdmcsJKc8ZMAAAACXBIWXMAAAPkAAAD5AFuDN0cAAAAB3RJTUUH5wkGDx03o2MyGQAAfh1JREFU
         eF6dfQWYE1n2PbvjLugwtiOMMzC4DTowuLs7g7tDuwvtrrS7W9zd02mJJ520u8bD/1bSNAwzu7/df777
         hepKpfLq1H3nnvOqXjHOLv6HXfQPm/CfFv5LFt7LNhEsvGxgvfJE9A9YY+S+MsJ+xSp8uR3/nrx8ijj/
         U3bat5ioHztFV7QZn9b6fyD2+UCFPz0yVPfErICwtBWqU74SuH8o9JggSJtu4y8yCzdazXK7SWc2d46Y
@@ -1010,13 +1014,15 @@
         D5YGz7l2MpA+AAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="gunaPictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="gunaPictureBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>58, 45</value>
   </data>
   <data name="gunaPictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 120</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="gunaPictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
   </data>
@@ -1056,6 +1062,9 @@
   <data name="&gt;&gt;PMain.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
@@ -1083,11 +1092,17 @@
   <data name="&gt;&gt;dcPDrag2.Type" xml:space="preserve">
     <value>Guna.UI.WinForms.GunaDragControl, Guna.UI, Version=1.9.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
   </data>
-  <data name="&gt;&gt;colDelete.Name" xml:space="preserve">
-    <value>colDelete</value>
+  <data name="&gt;&gt;descriptionDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>descriptionDataGridViewTextBoxColumn</value>
   </data>
-  <data name="&gt;&gt;colDelete.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewLinkColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;descriptionDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;currentViewBindingSource.Name" xml:space="preserve">
+    <value>currentViewBindingSource</value>
+  </data>
+  <data name="&gt;&gt;currentViewBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

@@ -37,6 +37,11 @@ namespace FrontEnd
 
         private void btnExit_Click(object sender, EventArgs e) { this.Close(); }
         private void btnMinimize_Click(object sender, EventArgs e) { this.WindowState = FormWindowState.Minimized;  }
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmAddTask frmAddTask = new frmAddTask();
+            frmAddTask.ShowDialog();
+        }
 
         #endregion
 

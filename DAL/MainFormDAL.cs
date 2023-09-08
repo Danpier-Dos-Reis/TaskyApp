@@ -37,9 +37,9 @@ namespace DAL
                             list.Add(view);
                         }
                     }
+                    connection.Close();
                 }
             }
-
             return list;
         }
 

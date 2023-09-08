@@ -46,10 +46,12 @@
             this.dcPDrag = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.pDrag2 = new Guna.UI.WinForms.GunaPanel();
             this.dcPDrag2 = new Guna.UI.WinForms.GunaDragControl(this.components);
-            this.colDelete = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.currentViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.currentViewBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // EMainForm
@@ -63,6 +65,7 @@
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
             this.btnExit.BaseColor = System.Drawing.Color.Transparent;
             this.btnExit.BorderColor = System.Drawing.Color.Transparent;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnExit.FocusedColor = System.Drawing.Color.Empty;
             resources.ApplyResources(this.btnExit, "btnExit");
@@ -85,6 +88,7 @@
             this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
             this.btnMinimize.BaseColor = System.Drawing.Color.Transparent;
             this.btnMinimize.BorderColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimize.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnMinimize.FocusedColor = System.Drawing.Color.Empty;
             resources.ApplyResources(this.btnMinimize, "btnMinimize");
@@ -125,6 +129,7 @@
             this.btnSettings.BackColor = System.Drawing.Color.Transparent;
             this.btnSettings.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(59)))), ((int)(((byte)(80)))));
             this.btnSettings.BorderColor = System.Drawing.Color.Transparent;
+            this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSettings.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSettings.FocusedColor = System.Drawing.Color.Empty;
             resources.ApplyResources(this.btnSettings, "btnSettings");
@@ -147,6 +152,7 @@
             this.btnMetrics.BackColor = System.Drawing.Color.Transparent;
             this.btnMetrics.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(59)))), ((int)(((byte)(80)))));
             this.btnMetrics.BorderColor = System.Drawing.Color.Transparent;
+            this.btnMetrics.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMetrics.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnMetrics.FocusedColor = System.Drawing.Color.Empty;
             resources.ApplyResources(this.btnMetrics, "btnMetrics");
@@ -169,6 +175,7 @@
             this.btnAllTasks.BackColor = System.Drawing.Color.Transparent;
             this.btnAllTasks.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(59)))), ((int)(((byte)(80)))));
             this.btnAllTasks.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAllTasks.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAllTasks.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAllTasks.FocusedColor = System.Drawing.Color.Empty;
             resources.ApplyResources(this.btnAllTasks, "btnAllTasks");
@@ -194,6 +201,7 @@
             // lblDateNow
             // 
             resources.ApplyResources(this.lblDateNow, "lblDateNow");
+            this.lblDateNow.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.lblDateNow.ForeColor = System.Drawing.Color.Black;
             this.lblDateNow.Name = "lblDateNow";
             // 
@@ -204,6 +212,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.Transparent;
             this.btnAdd.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(59)))), ((int)(((byte)(80)))));
             this.btnAdd.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAdd.FocusedColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.btnAdd, "btnAdd");
@@ -218,12 +227,15 @@
             this.btnAdd.OnHoverImage = null;
             this.btnAdd.OnPressedColor = System.Drawing.Color.Transparent;
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // gMain
             // 
+            this.gMain.AutoGenerateColumns = false;
             this.gMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gMain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colDelete});
+            this.descriptionDataGridViewTextBoxColumn});
+            this.gMain.DataSource = this.currentViewBindingSource;
             resources.ApplyResources(this.gMain, "gMain");
             this.gMain.Name = "gMain";
             // 
@@ -245,12 +257,15 @@
             // 
             this.dcPDrag2.TargetControl = this.pDrag2;
             // 
-            // colDelete
+            // descriptionDataGridViewTextBoxColumn
             // 
-            this.colDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.colDelete, "colDelete");
-            this.colDelete.Name = "colDelete";
-            this.colDelete.Text = "delete";
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            resources.ApplyResources(this.descriptionDataGridViewTextBoxColumn, "descriptionDataGridViewTextBoxColumn");
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            // 
+            // currentViewBindingSource
+            // 
+            this.currentViewBindingSource.DataSource = typeof(Models.CurrentView);
             // 
             // MainForm
             // 
@@ -271,6 +286,7 @@
             this.PMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.currentViewBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,7 +310,8 @@
         private Guna.UI.WinForms.GunaPanel pDrag;
         private Guna.UI.WinForms.GunaPanel pDrag2;
         private Guna.UI.WinForms.GunaDragControl dcPDrag2;
-        private System.Windows.Forms.DataGridViewLinkColumn colDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource currentViewBindingSource;
     }
 }
 
