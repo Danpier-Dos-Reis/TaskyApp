@@ -169,7 +169,7 @@
             this.btnSave.Image = null;
             this.btnSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSave.ImageSize = new System.Drawing.Size(20, 5);
-            this.btnSave.Location = new System.Drawing.Point(185, 204);
+            this.btnSave.Location = new System.Drawing.Point(189, 204);
             this.btnSave.Name = "btnSave";
             this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(59)))), ((int)(((byte)(80)))));
             this.btnSave.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -180,6 +180,7 @@
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // rfrmAddTask
             // 

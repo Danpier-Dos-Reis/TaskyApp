@@ -25,7 +25,7 @@ namespace DAL
                 using (SQLiteConnection connection = new SQLiteConnection(_connString))
                 {
                     connection.Open();
-                    string query = "SELECT Description FROM AllTasks WHERE Id_TaskFinished = null";
+                    string query = "SELECT Description FROM AllTasks";
                     SQLiteCommand command = new SQLiteCommand(query, connection);
                     command.CommandType = CommandType.Text;
 
@@ -43,6 +43,10 @@ namespace DAL
             return list;
         }
 
+        /// <summary>
+        /// Return TRUE if connection to database is successfull
+        /// </summary>
+        /// <returns></returns>
         public bool DBConnectionOK() { return new SoporteMainFormDAL(_connString).TryDBConnection(); }
     }
 }
