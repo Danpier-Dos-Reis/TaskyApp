@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.EMainForm = new Guna.UI.WinForms.GunaElipse(this.components);
             this.btnExit = new Guna.UI.WinForms.GunaButton();
@@ -44,13 +45,16 @@
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.lblDateNow = new Guna.UI.WinForms.GunaLabel();
             this.btnAdd = new Guna.UI.WinForms.GunaButton();
-            this.gMain = new System.Windows.Forms.DataGridView();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.currentViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rzMainForm = new Guna.UI.WinForms.GunaResize(this.components);
             this.dcPDrag = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.pDrag2 = new Guna.UI.WinForms.GunaPanel();
             this.dcPDrag2 = new Guna.UI.WinForms.GunaDragControl(this.components);
+            this.gMain = new Guna.UI.WinForms.GunaDataGridView();
+            this.currentViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idTaskDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.areaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
             this.PMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gMain)).BeginInit();
@@ -232,47 +236,6 @@
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // gMain
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.NullValue = " ";
-            this.gMain.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gMain.AutoGenerateColumns = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(59)))), ((int)(((byte)(80)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gMain.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.gMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gMain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.descriptionDataGridViewTextBoxColumn});
-            this.gMain.DataSource = this.currentViewBindingSource;
-            resources.ApplyResources(this.gMain, "gMain");
-            this.gMain.Name = "gMain";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lucida Handwriting", 11.25F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gMain.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            resources.ApplyResources(this.descriptionDataGridViewTextBoxColumn, "descriptionDataGridViewTextBoxColumn");
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            // 
-            // currentViewBindingSource
-            // 
-            this.currentViewBindingSource.DataSource = typeof(Models.CurrentView);
-            // 
             // rzMainForm
             // 
             this.rzMainForm.TargetForm = this;
@@ -291,15 +254,123 @@
             // 
             this.dcPDrag2.TargetControl = this.pDrag2;
             // 
+            // gMain
+            // 
+            this.gMain.AllowUserToAddRows = false;
+            this.gMain.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(59)))), ((int)(((byte)(80)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.gMain.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gMain.AutoGenerateColumns = false;
+            this.gMain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gMain.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.gMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gMain.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(59)))), ((int)(((byte)(80)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gMain.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            resources.ApplyResources(this.gMain, "gMain");
+            this.gMain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idTaskDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.areaDataGridViewTextBoxColumn,
+            this.Delete});
+            this.gMain.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gMain.DataSource = this.currentViewBindingSource;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(244)))), ((int)(((byte)(226)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gMain.DefaultCellStyle = dataGridViewCellStyle3;
+            this.gMain.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.gMain.EnableHeadersVisualStyles = false;
+            this.gMain.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(244)))), ((int)(((byte)(226)))));
+            this.gMain.Name = "gMain";
+            this.gMain.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gMain.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.gMain.RowHeadersVisible = false;
+            this.gMain.RowTemplate.Height = 30;
+            this.gMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gMain.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Emerald;
+            this.gMain.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(59)))), ((int)(((byte)(80)))));
+            this.gMain.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gMain.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.gMain.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.gMain.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.gMain.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.gMain.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(244)))), ((int)(((byte)(226)))));
+            this.gMain.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(59)))), ((int)(((byte)(80)))));
+            this.gMain.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
+            this.gMain.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gMain.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.gMain.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.gMain.ThemeStyle.HeaderStyle.Height = 30;
+            this.gMain.ThemeStyle.ReadOnly = true;
+            this.gMain.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(244)))), ((int)(((byte)(226)))));
+            this.gMain.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.gMain.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gMain.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.gMain.ThemeStyle.RowsStyle.Height = 30;
+            this.gMain.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.gMain.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.gMain.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gMain_CellContentClick);
+            // 
+            // currentViewBindingSource
+            // 
+            this.currentViewBindingSource.DataSource = typeof(Models.CurrentView);
+            // 
+            // idTaskDataGridViewTextBoxColumn
+            // 
+            this.idTaskDataGridViewTextBoxColumn.DataPropertyName = "Id_Task";
+            resources.ApplyResources(this.idTaskDataGridViewTextBoxColumn, "idTaskDataGridViewTextBoxColumn");
+            this.idTaskDataGridViewTextBoxColumn.Name = "idTaskDataGridViewTextBoxColumn";
+            this.idTaskDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            resources.ApplyResources(this.descriptionDataGridViewTextBoxColumn, "descriptionDataGridViewTextBoxColumn");
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // areaDataGridViewTextBoxColumn
+            // 
+            this.areaDataGridViewTextBoxColumn.DataPropertyName = "Area";
+            resources.ApplyResources(this.areaDataGridViewTextBoxColumn, "areaDataGridViewTextBoxColumn");
+            this.areaDataGridViewTextBoxColumn.Name = "areaDataGridViewTextBoxColumn";
+            this.areaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Delete
+            // 
+            resources.ApplyResources(this.Delete, "Delete");
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "delete row";
+            this.Delete.UseColumnTextForLinkValue = true;
+            this.Delete.VisitedLinkColor = System.Drawing.Color.Empty;
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.Controls.Add(this.gMain);
             this.Controls.Add(this.pDrag2);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.gMain);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblDateNow);
             this.Controls.Add(this.PMain);
@@ -328,14 +399,17 @@
         private Guna.UI.WinForms.GunaButton btnMetrics;
         private Guna.UI.WinForms.GunaLabel lblDateNow;
         private Guna.UI.WinForms.GunaButton btnAdd;
-        private System.Windows.Forms.DataGridView gMain;
         private Guna.UI.WinForms.GunaResize rzMainForm;
         private Guna.UI.WinForms.GunaDragControl dcPDrag;
         private Guna.UI.WinForms.GunaPanel pDrag;
         private Guna.UI.WinForms.GunaPanel pDrag2;
         private Guna.UI.WinForms.GunaDragControl dcPDrag2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private Guna.UI.WinForms.GunaDataGridView gMain;
         private System.Windows.Forms.BindingSource currentViewBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idTaskDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn areaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewLinkColumn Delete;
     }
 }
 

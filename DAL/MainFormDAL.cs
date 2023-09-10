@@ -19,13 +19,17 @@ namespace DAL
 
         public List<CurrentView> GetCurrentTasks()
         {
-            List < CurrentView > list = new List < CurrentView >();
+            List<CurrentView> view = new List<CurrentView>();
+
             if (DBConnectionOK())
             {
                 using (SQLiteConnection connection = new SQLiteConnection(_connString))
                 {
                     connection.Open();
-                    string query = "SELECT Description FROM AllTasks";
+                    string query = @"SELECT T.Id,T.Description,A.Name
+                                                       FROM AllTasks T
+                                                       INNER JOIN Area A on T.Id_Area = A.Id
+                                                       WHERE Id_TaskFinished IS NULL;";
                     SQLiteCommand command = new SQLiteCommand(query, connection);
                     command.CommandType = CommandType.Text;
 
@@ -33,14 +37,43 @@ namespace DAL
                     {
                         while (reader.Read())
                         {
-                            CurrentView view = new CurrentView() { Description = reader.GetString(0)};
-                            list.Add(view);
+                            CurrentView t = new CurrentView()
+                            {
+                                Id_Task = reader.GetInt32(0),
+                                Description = reader.GetString(1),
+                                Area = reader.GetString(2)
+                            };
+                            view.Add(t);
                         }
                     }
                     connection.Close();
                 }
             }
-            return list;
+            return view;
+        }
+
+        public void DeleteCell(int idTask, out bool deleted)
+        {
+            deleted = false;
+            if(DBConnectionOK())
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(_connString))
+                {
+                    connection.Open();
+                    string query = "DELETE FROM AllTasks WHERE Id = @Id";
+                    SQLiteCommand command = new SQLiteCommand(query, connection);
+                    command.CommandType = CommandType.Text;
+
+                    SQLiteParameter Id = new SQLiteParameter("@Id" , idTask);
+                    command.Parameters.Add(Id);
+
+
+
+                    deleted = command.ExecuteNonQuery() > 0 ? true : false;
+
+                    connection.Close();
+                }
+            }
         }
 
         /// <summary>

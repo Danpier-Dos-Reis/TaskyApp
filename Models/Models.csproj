@@ -41,9 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllTasks.cs" />
     <Compile Include="Area.cs" />
     <Compile Include="CurrentView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TasksFinished.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

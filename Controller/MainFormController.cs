@@ -19,6 +19,16 @@ namespace Controller
 
             return mainFormDAL.GetCurrentTasks();
         }
+
+        public bool DeleteCell(string connString, int idTasks)
+        {
+            bool deleted = false;
+            MainFormDAL mainFormDAL = new MainFormDAL(connString);
+            mainFormDAL.DeleteCell(idTasks, out deleted);
+
+            return deleted;
+        }
+
         public bool TryDBConnection(string connString)
         {
             SoporteMainFormDAL soporteMainFormDAL = new SoporteMainFormDAL(connString);

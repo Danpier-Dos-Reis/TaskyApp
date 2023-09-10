@@ -133,13 +133,58 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>846, 385</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="gMain.ColumnHeadersHeight" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="idTaskDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Id_Task</value>
+  </data>
+  <data name="idTaskDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="descriptionDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="areaDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <metadata name="Delete.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Delete.HeaderText" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <metadata name="currentViewBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>454, 17</value>
+  </metadata>
+  <data name="gMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>258, 167</value>
+  </data>
+  <data name="gMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>548, 192</value>
+  </data>
+  <data name="gMain.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;gMain.Name" xml:space="preserve">
+    <value>gMain</value>
+  </data>
+  <data name="&gt;&gt;gMain.Type" xml:space="preserve">
+    <value>Guna.UI.WinForms.GunaDataGridView, Guna.UI, Version=1.9.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;gMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="pDrag2.Location" type="System.Drawing.Point, System.Drawing">
     <value>232, 6</value>
   </data>
   <data name="pDrag2.Size" type="System.Drawing.Size, System.Drawing">
     <value>532, 23</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pDrag2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -153,7 +198,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pDrag2.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnMinimize.Font" type="System.Drawing.Font, System.Drawing">
     <value>Lucida Handwriting, 11.25pt</value>
@@ -191,7 +236,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnMinimize.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnExit.Font" type="System.Drawing.Font, System.Drawing">
     <value>Lucida Handwriting, 11.25pt</value>
@@ -271,33 +316,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnExit.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="descriptionDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Description</value>
-  </data>
-  <metadata name="currentViewBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>454, 17</value>
-  </metadata>
-  <data name="gMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>258, 169</value>
-  </data>
-  <data name="gMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>559, 194</value>
-  </data>
-  <data name="gMain.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;gMain.Name" xml:space="preserve">
-    <value>gMain</value>
-  </data>
-  <data name="&gt;&gt;gMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gMain.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;gMain.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="btnAdd.Font" type="System.Drawing.Font, System.Drawing">
@@ -310,7 +328,7 @@
     <value>230, 30</value>
   </data>
   <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnAdd.Text" xml:space="preserve">
     <value>Add</value>
@@ -472,7 +490,7 @@
         c8WxhAeEOxKWLfmB2SInFG8ottI58+ee6oWhZXtmWuky24kyziRTaBjkWCVNll5ZbVFcYrIfqeBv8/1T
         4jLEtYopjlHWsNB9P+oPfnfrJvv7ikmhCNQ+e957JwS3oZD3vK8jzyscQ/UTXNol/9ohDH2Ini9pHQfQ
         vAnnVyXN2IGLLWh9zOiO7kvVMgPJJLydyjfNQcsNNC4Ue/vZ5+Qe4tLVxDXs7UNXSrIXK7y7vry3P8/4
-        /RH5BrdmcsJKc8ZMAAAACXBIWXMAAAPiAAAD4gHuD5mHAAAAB3RJTUUH5wkGDx03o2MyGQAAfh1JREFU
+        /RH5BrdmcsJKc8ZMAAAACXBIWXMAAAPeAAAD3gHuRCeuAAAAB3RJTUUH5wkGDx03o2MyGQAAfh1JREFU
         eF6dfQWYE1n2PbvjLugwtiOMMzC4DTowuLs7g7tDuwvtrrS7W9zd02mJJ520u8bD/1bSNAwzu7/df777
         hepKpfLq1H3nnvOqXjHOLv6HXfQPm/CfFv5LFt7LNhEsvGxgvfJE9A9YY+S+MsJ+xSp8uR3/nrx8ijj/
         U3bat5ioHztFV7QZn9b6fyD2+UCFPz0yVPfErICwtBWqU74SuH8o9JggSJtu4y8yCzdazXK7SWc2d46Y
@@ -1062,6 +1080,9 @@
   <data name="&gt;&gt;PMain.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
@@ -1070,18 +1091,6 @@
   </data>
   <data name="&gt;&gt;EMainForm.Type" xml:space="preserve">
     <value>Guna.UI.WinForms.GunaElipse, Guna.UI, Version=1.9.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
-  </data>
-  <data name="&gt;&gt;descriptionDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>descriptionDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;descriptionDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;currentViewBindingSource.Name" xml:space="preserve">
-    <value>currentViewBindingSource</value>
-  </data>
-  <data name="&gt;&gt;currentViewBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;rzMainForm.Name" xml:space="preserve">
     <value>rzMainForm</value>
@@ -1100,6 +1109,36 @@
   </data>
   <data name="&gt;&gt;dcPDrag2.Type" xml:space="preserve">
     <value>Guna.UI.WinForms.GunaDragControl, Guna.UI, Version=1.9.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;currentViewBindingSource.Name" xml:space="preserve">
+    <value>currentViewBindingSource</value>
+  </data>
+  <data name="&gt;&gt;currentViewBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;idTaskDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>idTaskDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;idTaskDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;descriptionDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>descriptionDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;descriptionDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;areaDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>areaDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;areaDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Delete.Name" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="&gt;&gt;Delete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewLinkColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

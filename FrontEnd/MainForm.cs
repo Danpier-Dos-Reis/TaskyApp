@@ -29,7 +29,7 @@ namespace FrontEnd
         {
             _connString = new SoporteMainForm().GetConnectionString();
             lblDateNow.Text = DateTime.Now.ToString("dd/MMMM/yyyy");
-            StartGrid(_connString);
+            StartGrid();
 
             //-----------------------Tests----------------------------------------//
             //bool r = new SoporteMainForm().TryDBConnection(soporte.GetConnectionString()); //everythig it's OK
@@ -43,18 +43,33 @@ namespace FrontEnd
             frmAddTask.ShowDialog(this);
         }
 
+        private void gMain_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = (DataGridViewRow)gMain.Rows[e.RowIndex];
+            DeleteCell((int)row.Cells[0].Value);
+
+        }
+
         #endregion
 
         #region Private Methods
 
         /// <summary>
-        /// Method that queries for current tasks and paste that in the Grid
+        /// Method that queries for current tasks and paste these tasks in the Grid
         /// </summary>
         /// <param name="connString"></param>
-        public void StartGrid(string connString)
+        public void StartGrid(string connString = null)
         {
             MainFormController mainFormController = new MainFormController();
             gMain.DataSource = mainFormController.GetCurrentTasks(_connString);
+        }
+
+        private void DeleteCell(int idTask)
+        { 
+            MainFormController mainFormController = new MainFormController();
+
+            //Refresh Grid
+            if (mainFormController.DeleteCell(_connString, idTask)) { StartGrid(); }
         }
 
         #endregion

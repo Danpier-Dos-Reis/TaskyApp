@@ -18,18 +18,25 @@ An application that enable get charts about your routines.
 
     ![Extension](Guide/Pictures/VSInstallerExtension.png "Extension")
 
-## Requirements
-
-* Add tasks related with area.
-* Add areas.
-* Add profile photo.
-* See all Parts of the app.
-* Make installer App.
-
 ## DataBase
 
 ![DataBaseDiagram](Guide/Pictures/DBDiagram.png "DataBaseDiagram")
 
-## Dependencies Related
+## Dependencies Relations
 
 ![Dependencies](Guide/Pictures/DependenciesDiagram.png "Dependencies")
+
+## This Version V0.3.0
+
+* Add tasks related with an area.
+* Add areas.
+* Delete Tasks.
+* Make installer App.
+
+## Semantic Versioning
+
+* X,Y,Z:
+    * x = version
+    * y = minor version
+    * z = Bug fixes and patches
+    * Example: **1.8.17** - 1 indicates the major version, 8 the minor version, and 17 the bug fixes or patches.
