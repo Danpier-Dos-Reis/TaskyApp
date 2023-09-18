@@ -74,6 +74,43 @@ namespace DAL
             return result;
         }
 
+        /// <summary>
+        /// Returns TRUE if that task already exists in the AREA
+        /// </summary>
+        /// <param name="Description"></param>
+        /// <param name="nameArea"></param>
+        /// <returns></returns>
+        public bool ExistsTask(string Description, string nameArea)
+        {
+            _mainFormDAL = new MainFormDAL(_connString);
+            bool exists = false;
+
+            if (_mainFormDAL.DBConnectionOK())
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(_connString))
+                {
+                    connection.Open();
+                    string query = @"SELECT Description FROM AllTasks T
+                                                        INNER JOIN Area A ON T.Id_Area = A.Id
+                                                        WHERE A.Name = @nameArea and T.Description = @Description;";
+                    SQLiteCommand command = new SQLiteCommand(query, connection);
+                    command.CommandType = CommandType.Text;
+
+                    SQLiteParameter NameArea = new SQLiteParameter("@nameArea",nameArea);
+                    SQLiteParameter description = new SQLiteParameter("@Description", Description);
+                    command.Parameters.Add(NameArea);
+                    command.Parameters.Add(description);
+
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read()) { exists = !string.IsNullOrEmpty(reader.GetString(0)) ? true : false; }
+                    }
+                    connection.Close();
+                }
+            }
+            return exists;
+        }
+
         public void SaveTask(string description, string nameArea)
         {
             _mainFormDAL = new MainFormDAL(_connString);
@@ -131,6 +168,83 @@ namespace DAL
                     connection.Close();
                 }
             }
+        }
+
+        /// <summary>
+        /// return List<Area>
+        /// </summary>
+        /// <returns></returns>
+        public List<Area> GetAreas()
+        {
+            MainFormDAL mainFormDAL = new MainFormDAL(_connString);
+            List <Area> listAreas = new List<Area>();
+
+            if (mainFormDAL.DBConnectionOK())
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(_connString))
+                {
+                    connection .Open();
+                    string query = "SELECT Id, Name,Created_At FROM Area;";
+                    SQLiteCommand command = new SQLiteCommand(query,connection);
+                    command.CommandType = CommandType.Text;
+
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Area area = new Area()
+                            {
+                                Id = reader.GetInt32(0),
+                                Name = reader.GetString(1),
+                                Created_At = reader.GetString(2)
+                            };
+                            listAreas.Add(area);
+                        }
+                    }
+                    connection.Close();
+                }
+            }
+            return listAreas;
+        }
+
+
+        public List<AllTasks> GetTaskRelated(string areaName)
+        {
+            MainFormDAL mainFormDAL = new MainFormDAL(_connString);
+            List<AllTasks> list = new List<AllTasks>();
+
+            if (mainFormDAL.DBConnectionOK())
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(_connString))
+                {
+                    connection.Open();
+                    string query = $@"SELECT T.Id, T.Description,T.Id_TaskFinished,
+                                                            		T.Id_Area,T.Created_At
+                                                            FROM AllTasks T
+                                                            INNER JOIN Area A ON A.Id = T.Id_Area
+                                                            WHERE A.Name = '{areaName}';";
+                    SQLiteCommand command = new SQLiteCommand(query, connection);
+                    command.CommandType = CommandType.Text;
+
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            AllTasks task = new AllTasks()
+                            {
+                                Id = reader.GetInt32(0),
+                                Description = reader.GetString(1),
+                                Id_TaskFinished = reader.IsDBNull(2) ? (int?)null : reader.GetInt32(2),
+                                Id_Area = reader.GetInt32(3),
+                                Created_At = reader.GetString(4)
+                            };
+                            list.Add(task);
+                        }
+                    }
+                    connection.Close();
+                }
+            }
+            return list;
         }
     }
 }

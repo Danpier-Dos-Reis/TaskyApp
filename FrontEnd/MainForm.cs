@@ -39,14 +39,19 @@ namespace FrontEnd
         private void btnMinimize_Click(object sender, EventArgs e) { this.WindowState = FormWindowState.Minimized;  }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmAddTask frmAddTask = new frmAddTask();
+            Context context = Context.Normal;
+            frmAddTask frmAddTask = new frmAddTask(context);
             frmAddTask.ShowDialog(this);
         }
 
         private void gMain_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = (DataGridViewRow)gMain.Rows[e.RowIndex];
-            DeleteCell((int)row.Cells[0].Value);
+            int column = e.ColumnIndex;
+            string cellValue = row.Cells[column].Value.ToString();
+
+            if (cellValue == "finish") { EndTask((int)row.Cells[0].Value,Context.Normal); }
+            if (cellValue == "update") { _UpdateCell(row); }
 
         }
 
@@ -64,12 +69,31 @@ namespace FrontEnd
             gMain.DataSource = mainFormController.GetCurrentTasks(_connString);
         }
 
-        private void DeleteCell(int idTask)
+        private void _UpdateCell(DataGridViewRow row)
+        {
+            Context context = Context.Update;
+            string[] values = { row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString() };
+            frmAddTask frmaddtask = new frmAddTask(context , row);
+
+            frmaddtask.LoadComboBox(values);
+            frmaddtask.ShowDialog(this);
+        }
+
+        /// <summary>
+        /// Update the Description of one row
+        /// </summary>
+        /// <param name="rowIndex"></param>
+        /// <param name="newValue"></param>
+        public void UpdateCell(int rowIndex, string newValue, Context context)
+        {
+            gMain.Rows[rowIndex].Cells[1].Value = newValue;
+        }
+        public void EndTask(int idTask, Context context)
         { 
             MainFormController mainFormController = new MainFormController();
 
             //Refresh Grid
-            if (mainFormController.DeleteCell(_connString, idTask)) { StartGrid(); }
+            if (mainFormController.EndTask(_connString, idTask, context)) { StartGrid(); }
         }
 
         #endregion

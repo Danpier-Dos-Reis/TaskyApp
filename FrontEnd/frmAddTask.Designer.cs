@@ -34,8 +34,6 @@
             this.lblDescription = new Guna.UI.WinForms.GunaLabel();
             this.lblArea = new Guna.UI.WinForms.GunaLabel();
             this.efrmAddTask = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.txtbDescription = new Guna.UI.WinForms.GunaTextBox();
-            this.txtbArea = new Guna.UI.WinForms.GunaTextBox();
             this.btnAddArea = new Guna.UI.WinForms.GunaButton();
             this.btnSave = new Guna.UI.WinForms.GunaButton();
             this.rfrmAddTask = new Guna.UI.WinForms.GunaResize(this.components);
@@ -43,6 +41,8 @@
             this.btnMinimize = new Guna.UI.WinForms.GunaButton();
             this.btnExit = new Guna.UI.WinForms.GunaButton();
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
+            this.cbArea = new System.Windows.Forms.ComboBox();
+            this.cbDescription = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblDateNow
@@ -87,44 +87,6 @@
             // efrmAddTask
             // 
             this.efrmAddTask.TargetControl = this;
-            // 
-            // txtbDescription
-            // 
-            this.txtbDescription.BackColor = System.Drawing.Color.Transparent;
-            this.txtbDescription.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
-            this.txtbDescription.BorderColor = System.Drawing.Color.Transparent;
-            this.txtbDescription.BorderSize = 0;
-            this.txtbDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbDescription.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
-            this.txtbDescription.FocusedBorderColor = System.Drawing.Color.Transparent;
-            this.txtbDescription.FocusedForeColor = System.Drawing.Color.Black;
-            this.txtbDescription.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbDescription.ForeColor = System.Drawing.Color.Black;
-            this.txtbDescription.Location = new System.Drawing.Point(155, 95);
-            this.txtbDescription.Name = "txtbDescription";
-            this.txtbDescription.PasswordChar = '\0';
-            this.txtbDescription.SelectedText = "";
-            this.txtbDescription.Size = new System.Drawing.Size(160, 27);
-            this.txtbDescription.TabIndex = 1;
-            // 
-            // txtbArea
-            // 
-            this.txtbArea.BackColor = System.Drawing.Color.Transparent;
-            this.txtbArea.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
-            this.txtbArea.BorderColor = System.Drawing.Color.Transparent;
-            this.txtbArea.BorderSize = 0;
-            this.txtbArea.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbArea.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
-            this.txtbArea.FocusedBorderColor = System.Drawing.Color.Transparent;
-            this.txtbArea.FocusedForeColor = System.Drawing.Color.Black;
-            this.txtbArea.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbArea.ForeColor = System.Drawing.Color.Black;
-            this.txtbArea.Location = new System.Drawing.Point(155, 151);
-            this.txtbArea.Name = "txtbArea";
-            this.txtbArea.PasswordChar = '\0';
-            this.txtbArea.SelectedText = "";
-            this.txtbArea.Size = new System.Drawing.Size(160, 27);
-            this.txtbArea.TabIndex = 2;
             // 
             // btnAddArea
             // 
@@ -251,19 +213,44 @@
             // 
             this.gunaDragControl1.TargetControl = this.pDrag;
             // 
+            // cbArea
+            // 
+            this.cbArea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
+            this.cbArea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbArea.Font = new System.Drawing.Font("Lucida Handwriting", 9F);
+            this.cbArea.ForeColor = System.Drawing.Color.Black;
+            this.cbArea.FormattingEnabled = true;
+            this.cbArea.Location = new System.Drawing.Point(155, 155);
+            this.cbArea.Name = "cbArea";
+            this.cbArea.Size = new System.Drawing.Size(160, 24);
+            this.cbArea.TabIndex = 2;
+            this.cbArea.SelectedIndexChanged += new System.EventHandler(this.cbArea_SelectedIndexChanged);
+            // 
+            // cbDescription
+            // 
+            this.cbDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
+            this.cbDescription.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbDescription.Font = new System.Drawing.Font("Lucida Handwriting", 9F);
+            this.cbDescription.ForeColor = System.Drawing.Color.Black;
+            this.cbDescription.FormattingEnabled = true;
+            this.cbDescription.Location = new System.Drawing.Point(155, 98);
+            this.cbDescription.Name = "cbDescription";
+            this.cbDescription.Size = new System.Drawing.Size(160, 24);
+            this.cbDescription.TabIndex = 1;
+            // 
             // frmAddTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(492, 254);
+            this.Controls.Add(this.cbDescription);
+            this.Controls.Add(this.cbArea);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.pDrag);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAddArea);
-            this.Controls.Add(this.txtbArea);
-            this.Controls.Add(this.txtbDescription);
             this.Controls.Add(this.lblArea);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.lblDateNow);
@@ -282,8 +269,6 @@
         private Guna.UI.WinForms.GunaLabel lblDescription;
         private Guna.UI.WinForms.GunaLabel lblArea;
         private Guna.UI.WinForms.GunaElipse efrmAddTask;
-        private Guna.UI.WinForms.GunaTextBox txtbDescription;
-        private Guna.UI.WinForms.GunaTextBox txtbArea;
         private Guna.UI.WinForms.GunaPanel pDrag;
         private Guna.UI.WinForms.GunaButton btnSave;
         private Guna.UI.WinForms.GunaButton btnAddArea;
@@ -291,5 +276,7 @@
         private Guna.UI.WinForms.GunaButton btnMinimize;
         private Guna.UI.WinForms.GunaButton btnExit;
         private Guna.UI.WinForms.GunaDragControl gunaDragControl1;
+        private System.Windows.Forms.ComboBox cbArea;
+        private System.Windows.Forms.ComboBox cbDescription;
     }
 }

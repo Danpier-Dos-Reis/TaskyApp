@@ -8,6 +8,7 @@ using System.Data;
 using DAL.Soporte;
 using System.Data.SQLite;
 using Models;
+using System.Windows.Forms;
 
 namespace DAL
 {
@@ -52,28 +53,92 @@ namespace DAL
             return view;
         }
 
-        public void DeleteCell(int idTask, out bool deleted)
+        public bool EndTask(int idTask, Context context)
         {
-            deleted = false;
+            bool deleted = false;
             if(DBConnectionOK())
             {
                 using (SQLiteConnection connection = new SQLiteConnection(_connString))
                 {
                     connection.Open();
-                    string query = "DELETE FROM AllTasks WHERE Id = @Id";
-                    SQLiteCommand command = new SQLiteCommand(query, connection);
-                    command.CommandType = CommandType.Text;
 
-                    SQLiteParameter Id = new SQLiteParameter("@Id" , idTask);
-                    command.Parameters.Add(Id);
+                    if (context == Context.Normal)
+                    {
+                        string query = "INSERT INTO TasksFinished(Context,Created_At) Values(@Context,DATETIME());";
+                        SQLiteCommand command = new SQLiteCommand(query, connection);
+                        command.CommandType = CommandType.Text;
+                        command.Parameters.Add(new SQLiteParameter("@Context", 1));
+                        try { command.ExecuteNonQuery(); } catch (Exception e) { MessageBox.Show(e.Message); }
 
 
 
-                    deleted = command.ExecuteNonQuery() > 0 ? true : false;
+                        //Update Table AllTasks
+                        query = "SELECT last_insert_rowid();";
+                        int Id_TaskFinished = GetLastInsertedId(new SQLiteCommand(query, connection));
 
+                        if (Id_TaskFinished > 0)
+                        {
+                            query = "UPDATE AllTasks SET Id_TaskFinished = @Id_TaskFinished WHERE Id = @Id;";
+                            command = new SQLiteCommand(query, connection);
+                            SQLiteParameter IdTF = new SQLiteParameter("@Id_TaskFinished", Id_TaskFinished);
+                            SQLiteParameter Id = new SQLiteParameter("@Id", idTask);
+                            command.CommandType = CommandType.Text;
+
+                            command.Parameters.Add(IdTF);
+                            command.Parameters.Add(Id);
+
+                            deleted = command.ExecuteNonQuery() > 0 ? true : false;
+                        }
+                    }
+
+                    if (context == Context.Update)
+                    {
+                        string query = "INSERT INTO TasksFinished(Context,Created_At) Values(@Context,DATETIME());";
+                        SQLiteCommand command = new SQLiteCommand(query, connection);
+                        command.CommandType = CommandType.Text;
+                        command.Parameters.Add(new SQLiteParameter("@Context", 2));
+                        try { command.ExecuteNonQuery(); } catch (Exception e) { MessageBox.Show(e.Message); }
+
+
+
+                        //Update Table AllTasks
+                        query = "SELECT last_insert_rowid();";
+                        int Id_TaskFinished = GetLastInsertedId(new SQLiteCommand(query, connection));
+
+                        if (Id_TaskFinished > 0)
+                        {
+                            query = "UPDATE AllTasks SET Id_TaskFinished = @Id_TaskFinished WHERE Id = @Id;";
+                            command = new SQLiteCommand(query, connection);
+                            SQLiteParameter IdTF = new SQLiteParameter("@Id_TaskFinished", Id_TaskFinished);
+                            SQLiteParameter Id = new SQLiteParameter("@Id", idTask);
+                            command.CommandType = CommandType.Text;
+
+                            command.Parameters.Add(IdTF);
+                            command.Parameters.Add(Id);
+
+                            deleted = command.ExecuteNonQuery() > 0 ? true : false;
+                        }
+                    }
+                    
                     connection.Close();
                 }
             }
+            return deleted;
+        }
+
+        public int GetLastInsertedId(SQLiteCommand cmd)
+        {
+            int Id_TaskFinished = 0;
+            cmd.CommandType = CommandType.Text;
+            try
+            {
+                using (SQLiteDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read()) { Id_TaskFinished = reader.GetInt32(0); }
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            return Id_TaskFinished;
         }
 
         /// <summary>

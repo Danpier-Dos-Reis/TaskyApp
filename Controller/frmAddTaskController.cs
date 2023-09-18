@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using DAL;
+using Models;
 
 namespace Controller
 {
@@ -27,6 +28,24 @@ namespace Controller
         {
             frmAddTaskDAL frmAddTaskDAL = new frmAddTaskDAL(_connString);
             frmAddTaskDAL.SaveTask(description, nameArea);
+        }
+
+        public List<AllTasks> GetTaskRelated(string areaName)
+        {
+            frmAddTaskDAL frmAddTaskDAL = new frmAddTaskDAL(_connString);
+            return frmAddTaskDAL.GetTaskRelated(areaName);
+        }
+
+        public List<Area> GetAreas()
+        {
+            frmAddTaskDAL frmAddTaskDAL = new frmAddTaskDAL(_connString);
+            return frmAddTaskDAL.GetAreas();
+        }
+
+        public bool ExistsTask(string Description, string nameArea)
+        {
+            frmAddTaskDAL frmAddTask = new frmAddTaskDAL(_connString);
+            return frmAddTask.ExistsTask(Description,nameArea);
         }
     }
 }

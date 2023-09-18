@@ -149,11 +149,17 @@
   <data name="areaDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Area</value>
   </data>
-  <metadata name="Delete.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="FinishTask.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="Delete.HeaderText" xml:space="preserve">
-    <value>Delete</value>
+  <data name="FinishTask.HeaderText" xml:space="preserve">
+    <value>FinishTask</value>
+  </data>
+  <metadata name="Update.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Update.HeaderText" xml:space="preserve">
+    <value>Update</value>
   </data>
   <metadata name="currentViewBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>454, 17</value>
@@ -1080,9 +1086,6 @@
   <data name="&gt;&gt;PMain.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
@@ -1134,10 +1137,16 @@
   <data name="&gt;&gt;areaDataGridViewTextBoxColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Delete.Name" xml:space="preserve">
-    <value>Delete</value>
+  <data name="&gt;&gt;FinishTask.Name" xml:space="preserve">
+    <value>FinishTask</value>
   </data>
-  <data name="&gt;&gt;Delete.Type" xml:space="preserve">
+  <data name="&gt;&gt;FinishTask.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewLinkColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Update.Name" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="&gt;&gt;Update.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewLinkColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

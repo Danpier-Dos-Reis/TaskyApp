@@ -54,7 +54,8 @@
             this.idTaskDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.areaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.FinishTask = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Update = new System.Windows.Forms.DataGridViewLinkColumn();
             this.PMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gMain)).BeginInit();
@@ -282,7 +283,8 @@
             this.idTaskDataGridViewTextBoxColumn,
             this.descriptionDataGridViewTextBoxColumn,
             this.areaDataGridViewTextBoxColumn,
-            this.Delete});
+            this.FinishTask,
+            this.Update});
             this.gMain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gMain.DataSource = this.currentViewBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -353,14 +355,22 @@
             this.areaDataGridViewTextBoxColumn.Name = "areaDataGridViewTextBoxColumn";
             this.areaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Delete
+            // FinishTask
             // 
-            resources.ApplyResources(this.Delete, "Delete");
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "delete row";
-            this.Delete.UseColumnTextForLinkValue = true;
-            this.Delete.VisitedLinkColor = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.FinishTask, "FinishTask");
+            this.FinishTask.Name = "FinishTask";
+            this.FinishTask.ReadOnly = true;
+            this.FinishTask.Text = "finish";
+            this.FinishTask.UseColumnTextForLinkValue = true;
+            this.FinishTask.VisitedLinkColor = System.Drawing.Color.Empty;
+            // 
+            // Update
+            // 
+            resources.ApplyResources(this.Update, "Update");
+            this.Update.Name = "Update";
+            this.Update.ReadOnly = true;
+            this.Update.Text = "update";
+            this.Update.UseColumnTextForLinkValue = true;
             // 
             // MainForm
             // 
@@ -409,7 +419,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idTaskDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn areaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewLinkColumn Delete;
+        private System.Windows.Forms.DataGridViewLinkColumn FinishTask;
+        private System.Windows.Forms.DataGridViewLinkColumn Update;
     }
 }
 

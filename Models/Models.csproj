@@ -46,6 +46,7 @@
     <Compile Include="CurrentView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TasksFinished.cs" />
+    <Compile Include="Context.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
