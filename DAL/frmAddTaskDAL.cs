@@ -123,13 +123,12 @@ namespace DAL
                     connection.Open();
                     if (ExistsArea(nameArea, out idArea))
                     {
-
                         string query = "INSERT INTO AllTasks(Description, Id_Area, Created_At) VALUES(@Description,@Id_Area, @Created_At)";
                         SQLiteCommand command = new SQLiteCommand(query, connection);
                         SQLiteParameter Description = new SQLiteParameter("@Description", description);
                         SQLiteParameter Id_Area = new SQLiteParameter("@Id_Area", idArea);
                         SQLiteParameter Created_At = new SQLiteParameter("@Created_At", DateTime.Now.ToString("dd/MMMM/yyyy"));
-                        
+
                         command.CommandType = CommandType.Text;
                         command.Parameters.Add(Description);
                         command.Parameters.Add(Id_Area);

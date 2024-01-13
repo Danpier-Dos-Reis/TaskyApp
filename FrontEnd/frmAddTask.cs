@@ -59,10 +59,20 @@ namespace FrontEnd
             {
                 if (!string.IsNullOrEmpty(cbDescription.Text) && !string.IsNullOrEmpty(cbArea.Text))
                 {
-                    frmAddTask.SaveTask(cbDescription.Text, cbArea.Text);
-                    cbDescription.Text = string.Empty;
-                    cbArea.Text = string.Empty;
-                    ((MainForm)this.Owner).StartGrid(_connString);
+                    frmAddTaskController controller = new frmAddTaskController(_connString);
+                    if (!controller.ExistsTask(cbDescription.Text, cbArea.Text))
+                    {
+                        frmAddTask.SaveTask(cbDescription.Text, cbArea.Text);
+                        cbDescription.Text = string.Empty;
+                        cbArea.Text = string.Empty;
+                        ((MainForm)this.Owner).StartGrid(_connString);
+                    }
+                    else
+                    {
+                        //If exist the task so we need put this task just in the grid
+                        ((MainForm)this.Owner).AddCells(1,cbDescription.Text, cbArea.Text);
+                        //((MainForm)this.Owner).StartGrid(_connString);
+                    }
                 }
                 else { MessageBox.Show("The field Area or Description are empties", "Error"); }
             }
